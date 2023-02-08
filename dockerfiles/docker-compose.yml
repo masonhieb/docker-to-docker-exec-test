@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  executor:
+    build: ./executor
+    command: tail -F thisfiledoesntexist
+  server:
+    build: ./server
+    ports: [ "3000:3000" ]
+    volumes:
+      # this is the socket bind mount to allow the server to "docker exec"
+      - type: "bind"
+        source: "/var/run/docker.sock"
+        target: "/var/run/docker.sock"
