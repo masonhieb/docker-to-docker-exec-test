@@ -3,8 +3,8 @@ Testing the concept of having a program on docker container A execute a program 
 
 # Server
 
-- REST interface, runs a command on the executor machine and returns the result
+- REST interface, runs the executor on the executor's container and returns the result
 
 # Executor
 
-- Its entire purpose is to run a simple program and return a result, to be gathered by the server
+- Its entire purpose is to run a simple program and return a result, to be gathered by the server. In this case, the program takes a string item and returns its accompanying item (ie meat->potato, strawberries->cream, etc)
